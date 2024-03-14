@@ -1,4 +1,4 @@
-package projectBuild;
+package GUI;
 
 public class MainController {
 }

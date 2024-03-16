@@ -1,0 +1,34 @@
+@import "Text.css";
+@import "ScrollPane.css";
+
+
+.ImageView {
+    -fx-background-size: cover;
+    -fx-background-repeat: none;
+    -fx-background-position: center;
+}
+
+
+.actionButtonBase {
+    -fx-background-color: rgba(126, 126, 126, 0.5);
+    -fx-background-radius: 50;
+}
+
+
+
+ /*TEST EXAMPLE IMAGES BELOW WILL BE REMOVED WHEN IMAGE ADDING IS DONE*/
+.A {
+    -fx-background-image: url("../Images/A.jpg");
+}
+
+.B {
+    -fx-background-image: url("../Images/B.jpg");
+}
+
+.C {
+    -fx-background-image: url("../Images/C.jpg");
+}
+
+.D {
+    -fx-background-image: url("../Images/D.jpg");
+}

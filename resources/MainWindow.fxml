@@ -1,14 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="GUI.UIController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@Styles/Main.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.UIController">
+   <left>
+      <VBox alignment="CENTER" fillWidth="false" minWidth="425.0" prefHeight="200.0" prefWidth="425.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="325.0">
+               <children>
+                  <Label alignment="CENTER" opacity="0.5" text="#01">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="25.0" />
+               </VBox.margin>
+            </HBox>
+            <VBox prefHeight="66.0" prefWidth="325.0">
+               <children>
+                  <Label styleClass="bold" text="IMAGE NAME">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <Label text="IMAGE DESCRIPTION">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="25.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox layoutX="60.0" layoutY="270.0" prefHeight="84.0" prefWidth="425.0" spacing="5.0">
+               <children>
+                  <Label styleClass="bold" text="Image Size">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="10.0" styleClass="bold" text="Image Type">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="10.0" styleClass="bold" text="Image Dimensions">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="82.0" styleClass="bold" text="Image Color">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="50.0" right="50.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <StackPane fx:id="test" prefHeight="595.0" prefWidth="855.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Pane fx:id="sizeFollow">
+                           <styleClass>
+                              <String fx:value="ImageView" />
+                              <String fx:value="A" />
+                           </styleClass></Pane>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="855.0" StackPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" fillHeight="false" prefHeight="100.0" prefWidth="427.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="actionButtonBase">
+                                       <graphic>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" translateX="-1.5">
+                                                   <image>
+                                                      <Image url="@Icons/leftArrow.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" fillHeight="false" prefHeight="100.0" prefWidth="427.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="actionButtonBase">
+                                       <graphic>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" rotate="180.0" translateX="0.5">
+                                                   <image>
+                                                      <Image url="@Icons/leftArrow.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets right="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+            <HBox prefHeight="105.0" prefWidth="855.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+               <children>
+                  <ScrollPane fitToHeight="true" prefHeight="200.0" prefWidth="549.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER" HBox.hgrow="ALWAYS">
+                     <content>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="853.0" spacing="20.0">
+                           <children>
+                              <Pane fx:id="sizeFollow1" minHeight="71.0" minWidth="100.0" prefHeight="71.0" prefWidth="100.0">
+                                 <styleClass>
+                                    <String fx:value="ImageView" />
+                                    <String fx:value="A" />
+                                 </styleClass>
+                              </Pane>
+                              <Pane fx:id="sizeFollow11" minHeight="71.0" minWidth="100.0" prefHeight="71.0" prefWidth="100.0">
+                                 <styleClass>
+                                    <String fx:value="B" />
+                                    <String fx:value="ImageView" />
+                                 </styleClass>
+                              </Pane>
+                              <Pane fx:id="sizeFollow12" minHeight="71.0" minWidth="100.0" prefHeight="71.0" prefWidth="100.0">
+                                 <styleClass>
+                                    <String fx:value="ImageView" />
+                                    <String fx:value="C" />
+                                 </styleClass>
+                              </Pane>
+                              <Pane fx:id="sizeFollow13" minHeight="71.0" minWidth="100.0" prefHeight="71.0" prefWidth="100.0">
+                                 <styleClass>
+                                    <String fx:value="ImageView" />
+                                    <String fx:value="D" />
+                                 </styleClass>
+                              </Pane>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                     </content>
+                  </ScrollPane>
+               </children></HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

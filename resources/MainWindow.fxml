@@ -26,7 +26,7 @@
                         <Pane fx:id="sizeFollow">
                            <styleClass>
                               <String fx:value="ImageView" />
-                              <String fx:value="A" />
+                              <String fx:value="B" />
                            </styleClass></Pane>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="855.0" StackPane.alignment="CENTER">
                            <children>
@@ -134,7 +134,7 @@
          <children>
             <HBox alignment="BASELINE_RIGHT" prefHeight="45.0" prefWidth="325.0">
                <children>
-                  <Label alignment="CENTER" opacity="0.5" text="#01">
+                  <Label alignment="CENTER" opacity="0.5" styleClass="accent" text="#01">
                      <font>
                         <Font size="40.0" />
                      </font>
@@ -146,12 +146,16 @@
             </HBox>
             <VBox prefHeight="66.0" prefWidth="325.0">
                <children>
-                  <Label styleClass="bold" text="IMAGE NAME">
+                  <Label text="IMAGE NAME">
                      <font>
                         <Font size="30.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="bold" />
+                        <String fx:value="secondary" />
+                     </styleClass>
                   </Label>
-                  <Label text="IMAGE DESCRIPTION">
+                  <Label styleClass="accent" text="IMAGE DESCRIPTION">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -165,46 +169,62 @@
                <children>
                   <VBox prefHeight="91.0" prefWidth="130.0" spacing="5.0">
                      <children>
-                        <Label styleClass="bold" text="Image Size">
+                        <Label text="Image Size">
                            <font>
                               <Font size="13.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="bold" />
+                              <String fx:value="secondary" />
+                           </styleClass>
                         </Label>
-                        <Label layoutX="10.0" layoutY="10.0" styleClass="bold" text="Image Type">
+                        <Label layoutX="10.0" layoutY="10.0" text="Image Type">
                            <font>
                               <Font size="13.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="bold" />
+                              <String fx:value="secondary" />
+                           </styleClass>
                         </Label>
-                        <Label layoutX="10.0" layoutY="10.0" styleClass="bold" text="Image Dimensions">
+                        <Label layoutX="10.0" layoutY="10.0" text="Image Dimensions">
                            <font>
                               <Font size="13.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="bold" />
+                              <String fx:value="secondary" />
+                           </styleClass>
                         </Label>
-                        <Label layoutX="10.0" layoutY="82.0" styleClass="bold" text="Image Color">
+                        <Label layoutX="10.0" layoutY="82.0" text="Image Colors">
                            <font>
                               <Font size="13.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="bold" />
+                              <String fx:value="secondary" />
+                           </styleClass>
                         </Label>
                      </children>
                   </VBox>
                   <VBox layoutX="10.0" layoutY="10.0" prefHeight="91.0" prefWidth="189.0" spacing="5.0">
                      <children>
-                        <Label text="23MB">
+                        <Label styleClass="accent" text="23MB">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <Label layoutX="10.0" layoutY="10.0" text="JPG">
+                        <Label layoutX="10.0" layoutY="10.0" styleClass="accent" text="JPG">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <Label layoutX="10.0" layoutY="10.0" text="720x1280">
+                        <Label layoutX="10.0" layoutY="10.0" styleClass="accent" text="720x1280">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <Label layoutX="10.0" layoutY="82.0" text="R: 1K B: 500 G: 1K">
+                        <Label layoutX="10.0" layoutY="82.0" styleClass="accent" text="R: 1K  G: 1K  B: 1K">
                            <font>
                               <Font size="13.0" />
                            </font>
@@ -217,21 +237,33 @@
                <children>
                   <Button mnemonicParsing="false" styleClass="BasicBTN">
                      <graphic>
-                        <Label text="Upload Image" textFill="WHITE">
+                        <Label styleClass="room" text="Add Image" textFill="WHITE">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </Label>
                      </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
                   </Button>
                   <Button layoutX="147.0" layoutY="23.0" mnemonicParsing="false" styleClass="BasicBTN">
                      <graphic>
-                        <Label text="Play" textFill="WHITE">
+                        <Label styleClass="room" text="Play" textFill="WHITE">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </Label>
                      </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
                   </Button>
                </children>
             </HBox>

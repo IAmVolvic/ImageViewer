@@ -1,6 +1,6 @@
 @import "Text.css";
 @import "ScrollPane.css";
-
+@import "Button.css";
 
 .ImageView {
     -fx-background-size: cover;

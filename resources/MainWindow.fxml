@@ -2,6 +2,7 @@
 
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -15,68 +16,6 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@Styles/Main.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.UIController">
-   <left>
-      <VBox alignment="CENTER" fillWidth="false" minWidth="425.0" prefHeight="200.0" prefWidth="425.0" BorderPane.alignment="CENTER">
-         <children>
-            <HBox alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="325.0">
-               <children>
-                  <Label alignment="CENTER" opacity="0.5" text="#01">
-                     <font>
-                        <Font size="40.0" />
-                     </font>
-                  </Label>
-               </children>
-               <VBox.margin>
-                  <Insets bottom="25.0" />
-               </VBox.margin>
-            </HBox>
-            <VBox prefHeight="66.0" prefWidth="325.0">
-               <children>
-                  <Label styleClass="bold" text="IMAGE NAME">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="IMAGE DESCRIPTION">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Label>
-               </children>
-               <VBox.margin>
-                  <Insets bottom="25.0" />
-               </VBox.margin>
-            </VBox>
-            <VBox layoutX="60.0" layoutY="270.0" prefHeight="84.0" prefWidth="425.0" spacing="5.0">
-               <children>
-                  <Label styleClass="bold" text="Image Size">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="10.0" layoutY="10.0" styleClass="bold" text="Image Type">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="10.0" layoutY="10.0" styleClass="bold" text="Image Dimensions">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="10.0" layoutY="82.0" styleClass="bold" text="Image Color">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
-         </children>
-         <padding>
-            <Insets left="50.0" right="50.0" />
-         </padding>
-      </VBox>
-   </left>
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
@@ -105,6 +44,9 @@
                                              </children>
                                           </HBox>
                                        </graphic>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
                                     </Button>
                                  </children>
                                  <HBox.margin>
@@ -128,6 +70,9 @@
                                              </children>
                                           </HBox>
                                        </graphic>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
                                     </Button>
                                  </children>
                                  <padding>
@@ -184,4 +129,116 @@
          </children>
       </VBox>
    </center>
+   <left>
+      <VBox alignment="CENTER" fillWidth="false" minWidth="425.0" prefHeight="720.0" prefWidth="425.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="BASELINE_RIGHT" prefHeight="45.0" prefWidth="325.0">
+               <children>
+                  <Label alignment="CENTER" opacity="0.5" text="#01">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="25.0" />
+               </VBox.margin>
+            </HBox>
+            <VBox prefHeight="66.0" prefWidth="325.0">
+               <children>
+                  <Label styleClass="bold" text="IMAGE NAME">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <Label text="IMAGE DESCRIPTION">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="25.0" />
+               </VBox.margin>
+            </VBox>
+            <HBox prefHeight="84.0" prefWidth="425.0">
+               <children>
+                  <VBox prefHeight="91.0" prefWidth="130.0" spacing="5.0">
+                     <children>
+                        <Label styleClass="bold" text="Image Size">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" styleClass="bold" text="Image Type">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" styleClass="bold" text="Image Dimensions">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="82.0" styleClass="bold" text="Image Color">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="91.0" prefWidth="189.0" spacing="5.0">
+                     <children>
+                        <Label text="23MB">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" text="JPG">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" text="720x1280">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="82.0" text="R: 1K B: 500 G: 1K">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="325.0" spacing="20.0" translateY="50.0">
+               <children>
+                  <Button mnemonicParsing="false" styleClass="BasicBTN">
+                     <graphic>
+                        <Label text="Upload Image" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="147.0" layoutY="23.0" mnemonicParsing="false" styleClass="BasicBTN">
+                     <graphic>
+                        <Label text="Play" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="50.0" right="50.0" />
+         </padding>
+      </VBox>
+   </left>
 </BorderPane>

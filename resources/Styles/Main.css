@@ -2,6 +2,22 @@
 @import "ScrollPane.css";
 @import "Button.css";
 
+.room {
+    -fx-text-fill: #ffffff;
+}
+.secondary {
+    -fx-text-fill: #222326;
+}
+.accent {
+    -fx-text-fill: #000;
+}
+
+
+.background {
+    -fx-background-color: #ffffff;
+}
+
+
 .ImageView {
     -fx-background-size: cover;
     -fx-background-repeat: none;
@@ -12,6 +28,13 @@
 .actionButtonBase {
     -fx-background-color: rgba(126, 126, 126, 0.5);
     -fx-background-radius: 50;
+}
+
+
+.selectedImage {
+    -fx-border-color: #222326;
+    -fx-border-style: solid;
+    -fx-border-width: 4px;
 }
 
 

@@ -1,14 +1,3 @@
-.room {
-    -fx-text-fill: #ffffff;
-}
-.secondary {
-    -fx-text-fill: #222326;
-}
-.accent {
-    -fx-text-fill: #000;
-}
-
-
 .bold {
     -fx-font-weight: bold;
 }

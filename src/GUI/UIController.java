@@ -1,19 +1,49 @@
 package GUI;
 
+import DAL.DALService;
 import javafx.fxml.FXML;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 
 public class UIController {
 
+//    Image Stats
     @FXML
-    public StackPane test;
+    private Label imageIndex;
     @FXML
-    public Pane sizeFollow;
+    private Label imageName;
     @FXML
-    public ImageView Img;
+    private Label imageDescription;
+    @FXML
+    private Label sizeLabel;
+    @FXML
+    private Label typeLabel;
+    @FXML
+    private Label dimensionLabel;
+    @FXML
+    private Label colorLabel;
 
-    public void initialize() {}
+//    Image Containers
+    @FXML
+    public Pane largeImage;
+    @FXML
+    public HBox smallImageContainer;
+
+//    Buttons
+    @FXML
+    private Button previousButton;
+    @FXML
+    private Button nextButton;
+    @FXML
+    private Button addImageButton;
+    @FXML
+    private Button playButton;
+
+
+    public void initialize() {
+        DALService dal = new DALService();
+    }
 
 }

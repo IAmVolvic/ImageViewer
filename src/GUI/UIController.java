@@ -1,6 +1,7 @@
 package GUI;
 
 import DAL.DALService;
+import GUI.Classes.ServiceFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -43,7 +44,7 @@ public class UIController {
 
 
     public void initialize() {
-        
+        System.out.println(ServiceFactory.imageService.getImageById(1));
     }
 
 }

@@ -1,6 +1,6 @@
-package BE;
+package BLL.Models;
 
-public class image {
+public class Image {
     private double imageSize;
     private String imageType;
     private double imageDimensionsX;
@@ -15,8 +15,9 @@ public class image {
         this.imageSize = imageSize;
     }
 
-    public void setImageType(String imageType) {
+    public Image setImageType(String imageType) {
         this.imageType = imageType;
+        return this;
     }
 
     public void setImageDimensionsX(double imageDimensionsX) {
@@ -39,8 +40,9 @@ public class image {
         this.imageColorB = imageColorB;
     }
 
-    public void setImagePath(String imagePath) {
+    public Image setImagePath(String imagePath) {
         this.imagePath = imagePath;
+        return this;
     }
 
 

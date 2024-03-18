@@ -43,7 +43,7 @@ public class UIController {
 
 
     public void initialize() {
-        DALService dal = new DALService();
+        
     }
 
 }

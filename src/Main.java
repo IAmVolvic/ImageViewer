@@ -18,11 +18,11 @@ public class Main extends Application {
 
         // Set the minimum width and height
         double minWidth = 1280;
-        double minHeight = 720;
+        double minHeight = 750;
 
         // Set the initial width and height
         double initialWidth = 1280;
-        double initialHeight = 720;
+        double initialHeight = 750;
 
         // Set the stage properties
         primaryStage.setScene(new Scene(root, initialWidth, initialHeight));

@@ -15,7 +15,7 @@ public class ImageRepository implements IImageRepository {
     }
 
     @Override
-    public ArrayList<Image> findAll() {
+    public ArrayList<Image> getAll() {
         return null;
     }
 

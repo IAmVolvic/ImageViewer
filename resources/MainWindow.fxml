@@ -32,7 +32,7 @@
                            <children>
                               <HBox alignment="CENTER_LEFT" fillHeight="false" prefHeight="100.0" prefWidth="427.0" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <Button fx:id="previousButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="actionButtonBase">
+                                    <Button mnemonicParsing="false" onAction="#previousButton" prefHeight="40.0" prefWidth="40.0" styleClass="actionButtonBase">
                                        <graphic>
                                           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                              <children>
@@ -58,7 +58,7 @@
                               </HBox>
                               <HBox alignment="CENTER_RIGHT" fillHeight="false" prefHeight="100.0" prefWidth="427.0" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <Button fx:id="nextButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="actionButtonBase">
+                                    <Button mnemonicParsing="false" onAction="#nextButton" prefHeight="40.0" prefWidth="40.0" styleClass="actionButtonBase">
                                        <graphic>
                                           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                              <children>
@@ -93,33 +93,6 @@
                   <ScrollPane fitToHeight="true" prefHeight="200.0" prefWidth="549.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER" HBox.hgrow="ALWAYS">
                      <content>
                         <HBox fx:id="smallImageContainer" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="853.0" spacing="20.0">
-                           <children>
-                              <Pane fx:id="sizeFollow1" minHeight="71.0" minWidth="100.0" prefHeight="71.0" prefWidth="100.0">
-                                 <styleClass>
-                                    <String fx:value="ImageView" />
-                                    <String fx:value="A" />
-                                 </styleClass>
-                              </Pane>
-                              <Pane fx:id="sizeFollow11" minHeight="71.0" minWidth="100.0" prefHeight="71.0" prefWidth="100.0">
-                                 <styleClass>
-                                    <String fx:value="B" />
-                                    <String fx:value="selectedImage" />
-                                    <String fx:value="ImageView" />
-                                 </styleClass>
-                              </Pane>
-                              <Pane fx:id="sizeFollow12" minHeight="71.0" minWidth="100.0" prefHeight="71.0" prefWidth="100.0">
-                                 <styleClass>
-                                    <String fx:value="ImageView" />
-                                    <String fx:value="C" />
-                                 </styleClass>
-                              </Pane>
-                              <Pane fx:id="sizeFollow13" minHeight="71.0" minWidth="100.0" prefHeight="71.0" prefWidth="100.0">
-                                 <styleClass>
-                                    <String fx:value="ImageView" />
-                                    <String fx:value="D" />
-                                 </styleClass>
-                              </Pane>
-                           </children>
                            <padding>
                               <Insets bottom="10.0" top="10.0" />
                            </padding>

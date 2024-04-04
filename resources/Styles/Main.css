@@ -32,9 +32,10 @@
 
 
 .selectedImage {
-    -fx-border-color: #222326;
+    -fx-border-color: #2749ff;
     -fx-border-style: solid;
-    -fx-border-width: 4px;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.1, 0, 0);
 }
 
 

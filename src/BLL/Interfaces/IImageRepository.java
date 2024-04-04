@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public interface IImageRepository {
     Image findById(int imageId);
 
-    ArrayList<Image> findAll();
+    ArrayList<Image> getAll();
 
     void save(Image newImage);
 

@@ -2,14 +2,16 @@ package BLL.Services;
 
 import BLL.Interfaces.IImageRepository;
 import BLL.Models.Image;
-import DAL.Repositories.ImageRepository;
+import DAL.Repositories.ImageRepositoryTest;
+
+import java.util.ArrayList;
 
 public class ImageService {
 
     private final IImageRepository imageRepository;
 
     public ImageService() {
-        imageRepository = new ImageRepository();
+        imageRepository = new ImageRepositoryTest();
     }
 
     public ImageService(IImageRepository imageRepo) {
@@ -18,5 +20,9 @@ public class ImageService {
 
     public Image getImageById(int imageId){
         return imageRepository.findById(imageId);
+    }
+
+    public ArrayList<Image> getAllImages(){
+        return imageRepository.getAll();
     }
 }

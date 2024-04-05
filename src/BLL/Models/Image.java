@@ -9,6 +9,7 @@ public class Image {
     private long imageColorR;
     private long imageColorG;
     private long imageColorB;
+    private long imageColorMIX;
     private String imagePath;
 
 
@@ -50,6 +51,11 @@ public class Image {
 
     public Image setImageColorB(long imageColorB) {
         this.imageColorB = imageColorB;
+        return this;
+    }
+
+    public Image setImageColorMIX(long imageColorMIX) {
+        this.imageColorMIX = imageColorMIX;
         return this;
     }
 
@@ -95,5 +101,9 @@ public class Image {
 
     public long getImageColorB() {
         return this.imageColorB;
+    }
+
+    public long getImageColorMIX() {
+        return this.imageColorMIX;
     }
 }

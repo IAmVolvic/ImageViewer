@@ -73,6 +73,7 @@ public class Image {
         detailsComponent.setImageColorR(this.ImageArray.get(this.currentIndex).getImageColorR());
         detailsComponent.setImageColorG(this.ImageArray.get(this.currentIndex).getImageColorG());
         detailsComponent.setImageColorB(this.ImageArray.get(this.currentIndex).getImageColorB());
+        detailsComponent.setImageColorMIX(this.ImageArray.get(this.currentIndex).getImageColorMIX());
     }
 
 

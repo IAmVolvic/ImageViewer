@@ -39,6 +39,7 @@ public class ImageRepositoryTest implements IImageRepository {
                             .setImageColorR(imageRGB[0])
                             .setImageColorG(imageRGB[1])
                             .setImageColorB(imageRGB[2])
+                            .setImageColorMIX(imageRGB[3])
             );
         }
         return Images;

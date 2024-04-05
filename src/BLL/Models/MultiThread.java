@@ -13,7 +13,7 @@ public class MultiThread {
         Image image = new Image(imageFile.toURI().toString());
         int width = (int) image.getWidth();
         int height = (int) image.getHeight();
-        long[] counters = new long[3]; // Index 0: red, Index 1: green, Index 2: blue
+        long[] counters = new long[4]; // Index 0: red, Index 1: green, Index 2: blue
 
         ExecutorService executor = Executors.newFixedThreadPool(NUM_THREADS);
 
@@ -40,7 +40,7 @@ public class MultiThread {
 
     private void countPixels(Image image, int startY, int endY, int width, long[] counters) {
         PixelReader pixelReader = image.getPixelReader();
-        long[] localCounters = new long[3];
+        long[] localCounters = new long[4];
 
         for (int y = startY; y < endY; y++) {
             for (int x = 0; x < width; x++) {
@@ -49,13 +49,19 @@ public class MultiThread {
                 int green = (color >> 8) & 0xFF;
                 int blue = color & 0xFF;
 
-                if (red != 0) {
+                if (!(red > green && red > blue) && !(green > red && green > blue) && !(blue > red && blue > green)) {
+                    localCounters[3]++;
+                }
+
+                if (red > green && red > blue) {
                     localCounters[0]++;
                 }
-                if (green != 0) {
+
+                if (green > red && green > blue) {
                     localCounters[1]++;
                 }
-                if (blue != 0) {
+
+                if (blue > red && blue > green) {
                     localCounters[2]++;
                 }
             }
@@ -63,7 +69,7 @@ public class MultiThread {
 
         // Aggregate local counts
         synchronized (counters) {
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 4; i++) {
                 counters[i] += localCounters[i];
             }
         }

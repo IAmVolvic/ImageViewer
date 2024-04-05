@@ -213,6 +213,11 @@
                               <Font size="13.0" />
                            </font>
                         </Label>
+                        <Label fx:id="colorLabelMIX" layoutX="10.0" layoutY="130.0" prefWidth="189.0" styleClass="accent" text="MIX: 1K">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
                      </children>
                   </VBox>
                </children>

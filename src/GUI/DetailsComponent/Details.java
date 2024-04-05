@@ -22,7 +22,7 @@ public class Details {
     private Label colorLabelR;
     private Label colorLabelG;
     private Label colorLabelB;
-
+    private Label colorLabelMIX;
 
     public void initialize(
         Label imageIndex,
@@ -33,7 +33,8 @@ public class Details {
         Label dimensionLabel,
         Label colorLabelR,
         Label colorLabelG,
-        Label colorLabelB
+        Label colorLabelB,
+        Label colorLabelMIX
     ) {
         this.imageIndex = imageIndex;
         this.imageName = imageName;
@@ -44,6 +45,7 @@ public class Details {
         this.colorLabelR = colorLabelR;
         this.colorLabelG = colorLabelG;
         this.colorLabelB = colorLabelB;
+        this.colorLabelMIX = colorLabelMIX;
     }
 
 
@@ -78,6 +80,10 @@ public class Details {
 
     public void setImageColorB(long ColorB){
         this.colorLabelB.setText("B: " + ColorB + " - " + formatNumberWithSuffix(ColorB));
+    }
+
+    public void setImageColorMIX(long ColorMIX){
+        this.colorLabelMIX.setText("MIX: " + ColorMIX + " - " + formatNumberWithSuffix(ColorMIX));
     }
 
     private String formatFileSize(long size) {

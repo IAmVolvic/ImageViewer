@@ -36,6 +36,9 @@ public class UIController {
     private Label colorLabelG;
     @FXML
     private Label colorLabelB;
+    @FXML
+    private Label colorLabelMIX;
+
 
 //    Image Containers
     public Pane largeImage;
@@ -61,7 +64,8 @@ public class UIController {
                 dimensionLabel,
                 colorLabelR,
                 colorLabelG,
-                colorLabelB
+                colorLabelB,
+                colorLabelMIX
         );
         imageComponent.initialize(largeImage, smallImageContainer, detailsComponent);
     }

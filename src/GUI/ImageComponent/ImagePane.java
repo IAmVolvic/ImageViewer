@@ -6,8 +6,8 @@ public class ImagePane {
     private Pane Image = new Pane();
 
     public ImagePane() {
-        this.Image.setMaxWidth(100);
-        this.Image.setMaxHeight(71);
+        this.Image.setMinWidth(100);
+        this.Image.setMinHeight(71);
         this.Image.setPrefWidth(100);
         this.Image.setPrefHeight(71);
         this.Image.getStyleClass().add("ImageView");
@@ -15,7 +15,7 @@ public class ImagePane {
 
     public ImagePane setBackgroundImage(String ImagePath){
         String path = getClass().getResource(ImagePath).toExternalForm();
-        this.Image.setStyle("-fx-background-image: url('" + path + "');");
+        this.Image.setStyle("-fx-background-image: url('" + ImagePath + "');");
         return this;
     }
 

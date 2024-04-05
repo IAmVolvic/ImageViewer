@@ -3,6 +3,7 @@ package GUI;
 import BLL.Services.ImageService;
 import DAL.DALService;
 import GUI.Classes.ServiceFactory;
+import GUI.DetailsComponent.Details;
 import GUI.ImageComponent.Image;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,7 +31,11 @@ public class UIController {
     @FXML
     private Label dimensionLabel;
     @FXML
-    private Label colorLabel;
+    private Label colorLabelR;
+    @FXML
+    private Label colorLabelG;
+    @FXML
+    private Label colorLabelB;
 
 //    Image Containers
     public Pane largeImage;
@@ -44,10 +49,21 @@ public class UIController {
 
     // Components
     private Image imageComponent = new Image();
-
+    private Details detailsComponent = new Details();
 
     public void initialize() {
-        imageComponent.initialize(largeImage, smallImageContainer);
+        detailsComponent.initialize(
+                imageIndex,
+                imageName,
+                imageDescription,
+                sizeLabel,
+                typeLabel,
+                dimensionLabel,
+                colorLabelR,
+                colorLabelG,
+                colorLabelB
+        );
+        imageComponent.initialize(largeImage, smallImageContainer, detailsComponent);
     }
 
 
@@ -59,6 +75,11 @@ public class UIController {
     @FXML
     private void previousButton(ActionEvent aE) throws IOException {
         imageComponent.previousImage();
+    }
+
+    @FXML
+    private void debug(ActionEvent aE) throws IOException {
+        imageComponent.deleteSelectedImage();
     }
 
 }

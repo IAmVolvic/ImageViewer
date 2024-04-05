@@ -1,18 +1,26 @@
 package BLL.Models;
 
 public class Image {
-    private double imageSize;
+    private String imageName;
+    private long imageSize;
     private String imageType;
-    private double imageDimensionsX;
-    private double imageDimensionsY;
-    private double imageColorR;
-    private double imageColorG;
-    private double imageColorB;
+    private long imageDimensionsX;
+    private long imageDimensionsY;
+    private long imageColorR;
+    private long imageColorG;
+    private long imageColorB;
     private String imagePath;
 
 
-    public void setImageSize(double imageSize) {
+
+    public Image setImageName(String imageName) {
+        this.imageName = imageName;
+        return this;
+    }
+
+    public Image setImageSize(long imageSize) {
         this.imageSize = imageSize;
+        return this;
     }
 
     public Image setImageType(String imageType) {
@@ -20,24 +28,29 @@ public class Image {
         return this;
     }
 
-    public void setImageDimensionsX(double imageDimensionsX) {
+    public Image setImageDimensionsX(long imageDimensionsX) {
         this.imageDimensionsX = imageDimensionsX;
+        return this;
     }
 
-    public void setImageDimensionsY(double imageDimensionsY) {
+    public Image setImageDimensionsY(long imageDimensionsY) {
         this.imageDimensionsY = imageDimensionsY;
+        return this;
     }
 
-    public void setImageColorR(double imageColorR) {
+    public Image setImageColorR(long imageColorR) {
         this.imageColorR = imageColorR;
+        return this;
     }
 
-    public void setImageColorG(double imageColorG) {
+    public Image setImageColorG(long imageColorG) {
         this.imageColorG = imageColorG;
+        return this;
     }
 
-    public void setImageColorB(double imageColorB) {
+    public Image setImageColorB(long imageColorB) {
         this.imageColorB = imageColorB;
+        return this;
     }
 
     public Image setImagePath(String imagePath) {
@@ -48,8 +61,11 @@ public class Image {
 
 //    -----------------------
 
+    public String getImageName() {
+        return this.imageName;
+    }
 
-    public double getImageSize() {
+    public long getImageSize() {
         return this.imageSize;
     }
 
@@ -57,11 +73,11 @@ public class Image {
         return this.imageType;
     }
 
-    public double getImageDimensionsX() {
+    public long getImageDimensionsX() {
         return this.imageDimensionsX;
     }
 
-    public double getImageDimensionsY() {
+    public long getImageDimensionsY() {
         return imageDimensionsY;
     }
 
@@ -69,15 +85,15 @@ public class Image {
         return this.imagePath;
     }
 
-    public double getImageColorR() {
+    public long getImageColorR() {
         return this.imageColorR;
     }
 
-    public double getImageColorG() {
+    public long getImageColorG() {
         return this.imageColorG;
     }
 
-    public double getImageColorB() {
+    public long getImageColorB() {
         return this.imageColorB;
     }
 }

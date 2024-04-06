@@ -14,7 +14,6 @@ public class ImagePane {
     }
 
     public ImagePane setBackgroundImage(String ImagePath){
-        String path = getClass().getResource(ImagePath).toExternalForm();
         this.Image.setStyle("-fx-background-image: url('" + ImagePath + "');");
         return this;
     }

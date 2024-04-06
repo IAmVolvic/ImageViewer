@@ -8,18 +8,24 @@ import java.util.ArrayList;
 
 public class ImageService {
 
+    // Repos
     private final IImageRepository imageRepository;
+
+    // States
+    private boolean isPlaying = false;
+
+
+    public boolean isPlaying() {
+        return isPlaying;
+    }
+
+    public void setPlaying(boolean playing) {
+        isPlaying = playing;
+    }
+
 
     public ImageService() {
         imageRepository = new ImageRepositoryTest();
-    }
-
-    public ImageService(IImageRepository imageRepo) {
-        imageRepository = imageRepo;
-    }
-
-    public Image getImageById(int imageId){
-        return imageRepository.findById(imageId);
     }
 
     public ArrayList<Image> getAllImages(){

@@ -3,6 +3,7 @@ package DAL.Repositories;
 import BLL.Interfaces.IImageRepository;
 import BLL.Models.Image;
 import BLL.Models.ImageDetails;
+import DAL.DALService;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -19,6 +20,8 @@ public class ImageRepositoryTest implements IImageRepository {
 
     @Override
     public ArrayList<Image> getAll() {
+        DALService dl = new DALService();
+
         ArrayList<Image> Images = new ArrayList<>();
 
         // Making my life a little easy

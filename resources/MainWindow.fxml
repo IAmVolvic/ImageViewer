@@ -224,7 +224,22 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="325.0" spacing="20.0" translateY="50.0">
                <children>
-                  <Button fx:id="addImageButton" mnemonicParsing="false" styleClass="BasicBTN">
+                  <Button mnemonicParsing="false" onAction="#deleteImage" styleClass="BasicDeleteBTN">
+                     <graphic>
+                        <Label styleClass="room" text="Delete Image" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addImage" styleClass="BasicBTN">
                      <graphic>
                         <Label styleClass="room" text="Add Image" textFill="WHITE">
                            <font>

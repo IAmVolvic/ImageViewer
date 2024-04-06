@@ -18,6 +18,7 @@ public class Image {
     private final ArrayList<BLL.Models.Image> ImageArray = ServiceFactory.imageService.getAllImages();
 
     // Component State
+    private final double cycleSpeed = 2;
     private final ArrayList<ImagePane> smallImageArray = new ArrayList<>();
     private int currentIndex = 0;
     private ImagePane currentlyActive;
@@ -123,7 +124,7 @@ public class Image {
     public void cycleImages(boolean togglePlay){
         if (togglePlay){
             timeline = new Timeline(
-                    new KeyFrame(Duration.seconds(2), e -> nextImage())
+                    new KeyFrame(Duration.seconds(cycleSpeed), e -> nextImage())
             );
             timeline.setCycleCount(Timeline.INDEFINITE);
             timeline.play();

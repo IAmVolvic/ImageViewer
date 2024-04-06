@@ -2,3 +2,8 @@
     -fx-background-radius: 7px;
     -fx-background-color: #222326;
 }
+
+.BasicDeleteBTN {
+    -fx-background-radius: 7px;
+    -fx-background-color: #c71e1e;
+}

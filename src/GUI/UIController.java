@@ -91,6 +91,17 @@ public class UIController {
     }
 
     @FXML
+    private void addImage(ActionEvent aE) throws IOException {
+        // Delete Image
+    }
+
+    @FXML
+    private void deleteImage(ActionEvent aE) throws IOException {
+        // Add Image
+    }
+
+
+    @FXML
     private void playButton(ActionEvent aE) throws IOException {
         togglePlayCycleImages(!ServiceFactory.imageService.isPlaying());
     }

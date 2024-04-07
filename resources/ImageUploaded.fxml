@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" minHeight="120.0" minWidth="488.0" prefHeight="120.0" prefWidth="488.0" spacing="10.0" styleClass="uploadedImage" stylesheets="@Styles/Main.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ImageUploadComponent.UploadedImage">
+   <padding>
+      <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+   </padding>
+   <children>
+      <HBox alignment="CENTER" prefHeight="65.0" prefWidth="456.0" spacing="20.0">
+         <children>
+            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Icons/1x/ImageIcon.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="368.0" spacing="5.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <TextField fx:id="ImageTitle" promptText="Image Title" styleClass="darkInput" />
+                  <TextField fx:id="ImageDescription" layoutX="10.0" layoutY="41.0" promptText="Image Description" styleClass="darkInput" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <ProgressBar prefHeight="5.0" prefWidth="9999.0" progress="0.0" stylesheets="@Styles/ProgressBar.css" VBox.vgrow="ALWAYS" />
+   </children>
+</VBox>

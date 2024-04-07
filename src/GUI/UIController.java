@@ -5,6 +5,7 @@ import DAL.DALService;
 import GUI.Classes.ServiceFactory;
 import GUI.DetailsComponent.Details;
 import GUI.ImageComponent.Image;
+import GUI.ImageUploadComponent.ImageUpload;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -18,7 +19,7 @@ import java.io.IOException;
 
 public class UIController {
 
-//    Image Stats
+    // Image Stats
     @FXML
     private Label imageIndex;
     @FXML
@@ -41,16 +42,13 @@ public class UIController {
     private Label colorLabelMIX;
 
 
-//    Image Containers
+    // Image Containers
     public Pane largeImage;
     public HBox smallImageContainer;
     @FXML
     private ScrollPane smallImageScrollContainer;
 
-
-//    Buttons
-    @FXML
-    private Button addImageButton;
+    // Buttons Labels
     @FXML
     private Label playButtonLabel;
 
@@ -59,6 +57,9 @@ public class UIController {
     private Image imageComponent = new Image();
     private Details detailsComponent = new Details();
 
+
+    // States
+    private boolean isInPrompt = false;
 
 
     public void initialize() {
@@ -78,11 +79,22 @@ public class UIController {
     }
 
 
+    public boolean isInPrompt() {
+        return isInPrompt;
+    }
+
+
+    public void setInPrompt(boolean inPrompt) {
+        isInPrompt = inPrompt;
+    }
+
+
     @FXML
     private void nextButton(ActionEvent aE) throws IOException {
         imageComponent.nextImage();
         togglePlayCycleImages(false);
     }
+
 
     @FXML
     private void previousButton(ActionEvent aE) throws IOException {
@@ -90,14 +102,17 @@ public class UIController {
         togglePlayCycleImages(false);
     }
 
+
     @FXML
     private void addImage(ActionEvent aE) throws IOException {
-        // Delete Image
+        if ( isInPrompt() ) { return; }
+        new ImageUpload().setParentController(this).promptImageUpload();
     }
+
 
     @FXML
     private void deleteImage(ActionEvent aE) throws IOException {
-        // Add Image
+        // Delete Image
     }
 
 
@@ -105,6 +120,7 @@ public class UIController {
     private void playButton(ActionEvent aE) throws IOException {
         togglePlayCycleImages(!ServiceFactory.imageService.isPlaying());
     }
+
 
     private void togglePlayCycleImages(boolean changePlaying){
         if( changePlaying ) {

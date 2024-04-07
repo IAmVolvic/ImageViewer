@@ -7,3 +7,11 @@
     -fx-background-radius: 7px;
     -fx-background-color: #c71e1e;
 }
+
+.UploadBTN {
+    -fx-background-color: transparent;
+    -fx-border-width: 2px;
+    -fx-border-style: dashed;
+    -fx-border-color: #222326;
+    -fx-border-radius: 35px;
+}

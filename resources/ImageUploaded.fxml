@@ -28,6 +28,6 @@
             </VBox>
          </children>
       </HBox>
-      <ProgressBar prefHeight="5.0" prefWidth="9999.0" progress="0.0" stylesheets="@Styles/ProgressBar.css" VBox.vgrow="ALWAYS" />
+      <ProgressBar fx:id="progressBar" prefHeight="5.0" prefWidth="9999.0" progress="0.0" stylesheets="@Styles/ProgressBar.css" VBox.vgrow="ALWAYS" />
    </children>
 </VBox>

@@ -1,6 +1,7 @@
 package GUI.ImageUploadComponent;
 
 import GUI.UIController;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -66,8 +67,11 @@ public class ImageUpload {
 
         FXMLLoader imageUploadFXML = new FXMLLoader(getClass().getResource("/ImageUploaded.fxml"));
         Parent includedRoot = imageUploadFXML.load();
+        UploadedImage controller = imageUploadFXML.getController();
         uploadedImages.add(imageUploadFXML);
         testInject.getChildren().add(includedRoot);
+
+        Platform.runLater(() -> controller.initiateUpload());
     }
 
 

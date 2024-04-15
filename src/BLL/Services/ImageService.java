@@ -51,7 +51,7 @@ public class ImageService {
 
     public void processImage(String imgPath, UploadedImage uploadedImageComponent){
         File file = new File(imgPath);
-        Image newImage = new Image().setImageDescription("No Description Given").setImagePath("/Images/"+file.getName());
+        Image newImage = new Image().setImageDescription("No Description Given").setImagePath(file.getPath());
         processingArray.add(newImage);
 
         Thread imageProcessingThread = new Thread(() -> {

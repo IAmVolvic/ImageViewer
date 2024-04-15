@@ -112,7 +112,7 @@ public class UIController {
 
     @FXML
     private void deleteImage(ActionEvent aE) throws IOException {
-        // Delete Image
+        imageComponent.deleteSelectedImage();
     }
 
 

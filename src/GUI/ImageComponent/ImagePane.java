@@ -2,6 +2,8 @@ package GUI.ImageComponent;
 
 import javafx.scene.layout.Pane;
 
+import java.io.File;
+
 public class ImagePane {
     private Pane Image = new Pane();
 
@@ -14,7 +16,8 @@ public class ImagePane {
     }
 
     public ImagePane setBackgroundImage(String ImagePath){
-        this.Image.setStyle("-fx-background-image: url('" + ImagePath + "');");
+        File Image = new File(ImagePath);
+        this.Image.setStyle("-fx-background-image: url('" + Image.toURI() + "');");
         return this;
     }
 

@@ -10,6 +10,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -84,14 +85,16 @@ public class Image {
         if (currentlyActive != null){
             currentlyActive.setIsActive(false);
         }
+
         smallImageArray.get(this.currentIndex).setIsActive(true);
         currentlyActive = smallImageArray.get(this.currentIndex);
-        largeImage.setStyle("-fx-background-image: url('" + this.ImageArray.get(this.currentIndex).getImagePath() + "');");
-
+        File Image = new File(this.ImageArray.get(this.currentIndex).getImagePath());
+        largeImage.setStyle("-fx-background-image: url('" + Image.toURI() + "');");
         // Set image detials
         detailsComponent.setImageIndex(this.currentIndex);
-        detailsComponent.setImageName(this.ImageArray.get(this.currentIndex).getImageName());
         detailsComponent.setImageSize(this.ImageArray.get(this.currentIndex).getImageSize());
+        detailsComponent.setImageName(this.ImageArray.get(this.currentIndex).getImageName());
+        detailsComponent.setImageDescription(this.ImageArray.get(this.currentIndex).getImageDescription());
         detailsComponent.setImageType(this.ImageArray.get(this.currentIndex).getImageType());
         detailsComponent.setImageDimensions(this.ImageArray.get(this.currentIndex).getImageDimensionsX(), this.ImageArray.get(this.currentIndex).getImageDimensionsY());
 
@@ -112,6 +115,23 @@ public class Image {
     }
 
 
+    private void clearImage(){
+        largeImage.setStyle("-fx-background-image: none;");
+        // Set image detials
+        detailsComponent.setImageIndex(0);
+        detailsComponent.setImageSize(0);
+        detailsComponent.setImageName("NA");
+        detailsComponent.setImageDescription("NA");
+        detailsComponent.setImageType("NA");
+        detailsComponent.setImageDimensions(0, 0);
+
+        detailsComponent.setImageColorR(0);
+        detailsComponent.setImageColorG(0);
+        detailsComponent.setImageColorB(0);
+        detailsComponent.setImageColorMIX(0);
+    }
+
+
     public void deleteSelectedImage() {
         smallImageContainer.getChildren().remove(smallImageArray.get(currentIndex).getPane());
         smallImageArray.remove(currentIndex);
@@ -120,7 +140,12 @@ public class Image {
         if (currentIndex == this.ImageArray.size()) {
             Previous();
         }
-        changeImage();
+
+        if (!ImageArray.isEmpty()){
+            changeImage();
+        }else{
+            clearImage();
+        }
     }
 
 

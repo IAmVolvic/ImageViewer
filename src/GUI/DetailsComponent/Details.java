@@ -58,6 +58,10 @@ public class Details {
         this.imageName.setText(ImageName);
     }
 
+    public void setImageDescription(String ImageDescription){
+        this.imageDescription.setText(ImageDescription);
+    }
+
     public void setImageSize(long ImageSize){
         this.sizeLabel.setText(formatFileSize(ImageSize));
     }

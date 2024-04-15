@@ -7,6 +7,7 @@ import DAL.DALService;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class ImageRepository implements IImageRepository {
@@ -105,7 +106,14 @@ public class ImageRepository implements IImageRepository {
     }
 
     @Override
-    public void delete(Image selectedImage) {
-
+    public void delete(int imageId) {
+        try {
+            String sql = "DELETE FROM images WHERE id = ?";
+            PreparedStatement ps = DALService.thisConnection().prepareStatement(sql);
+            ps.setInt(1, imageId);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

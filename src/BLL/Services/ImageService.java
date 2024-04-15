@@ -93,6 +93,11 @@ public class ImageService {
     }
 
 
+    public void deleteImage(Image ImageObject){
+        imageRepository.delete(ImageObject.getImageId());
+    }
+
+
     public void shutdownThreads(){
         BLLService.imageDetails.killThreads();
         processingArray.clear();

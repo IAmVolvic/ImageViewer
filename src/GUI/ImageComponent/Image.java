@@ -133,9 +133,13 @@ public class Image {
 
 
     public void deleteSelectedImage() {
+        if(ImageArray.isEmpty()){return;}
+
+        ServiceFactory.imageService.deleteImage(ImageArray.get(currentIndex));
         smallImageContainer.getChildren().remove(smallImageArray.get(currentIndex).getPane());
         smallImageArray.remove(currentIndex);
         ImageArray.remove(currentIndex);
+
 
         if (currentIndex == this.ImageArray.size()) {
             Previous();

@@ -26,7 +26,7 @@ public class ImageRepositoryTest implements IImageRepository {
     public void save(Image newImage) {}
 
     @Override
-    public void delete(Image selectedImage) {
+    public void delete(int imageId) {
 
     }
 }

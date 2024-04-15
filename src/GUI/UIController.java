@@ -140,4 +140,8 @@ public class UIController {
         }
     }
 
+
+    public void updateImageList(){
+        imageComponent.updateList();
+    }
 }

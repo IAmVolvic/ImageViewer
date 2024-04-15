@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class ImageRepositoryTest implements IImageRepository {
-
     @Override
     public Image findById(int imageId) {
         return new Image()
@@ -20,41 +19,11 @@ public class ImageRepositoryTest implements IImageRepository {
 
     @Override
     public ArrayList<Image> getAll() {
-        DALService dl = new DALService();
-
-        ArrayList<Image> Images = new ArrayList<>();
-
-        // Making my life a little easy
-        File directory = new File("resources/Images");
-        for (File file : directory.listFiles()){
-            ImageDetails imageDetails = new ImageDetails();
-            long [] imageRGB = imageDetails.getImageRGB(file);
-            long [] imageXnY = imageDetails.getImageXnYSize(file);
-
-            Images.add(
-                    new Image()
-                            .setImageName(imageDetails.getImageName(file))
-                            .setImageType(imageDetails.getImageFileType(file))
-                            .setImagePath("/Images/"+file.getName())
-                            .setImageSize(imageDetails.getImageSize(file))
-                            .setImageDimensionsX(imageXnY[0])
-                            .setImageDimensionsY(imageXnY[1])
-                            .setImageColorR(imageRGB[0])
-                            .setImageColorG(imageRGB[1])
-                            .setImageColorB(imageRGB[2])
-                            .setImageColorMIX(imageRGB[3])
-            );
-        }
-        return Images;
+        return null;
     }
 
     @Override
     public void save(Image newImage) {}
-
-    @Override
-    public void update(Image selectedImage) {
-
-    }
 
     @Override
     public void delete(Image selectedImage) {

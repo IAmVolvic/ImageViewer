@@ -1,7 +1,9 @@
 package BLL.Models;
 
 public class Image {
+    private int imageId;
     private String imageName;
+    private String imageDescription;
     private long imageSize;
     private String imageType;
     private long imageDimensionsX;
@@ -14,8 +16,18 @@ public class Image {
 
 
 
+    public Image setImageId(int imageId) {
+        this.imageId = imageId;
+        return this;
+    }
+
     public Image setImageName(String imageName) {
         this.imageName = imageName;
+        return this;
+    }
+
+    public Image setImageDescription(String imageDescription) {
+        this.imageDescription = imageDescription;
         return this;
     }
 
@@ -67,9 +79,16 @@ public class Image {
 
 //    -----------------------
 
+
+    public int getImageId() {
+        return this.imageId;
+    }
+
     public String getImageName() {
         return this.imageName;
     }
+
+    public String getImageDescription() { return this.imageDescription; }
 
     public long getImageSize() {
         return this.imageSize;

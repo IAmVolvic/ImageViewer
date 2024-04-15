@@ -10,7 +10,5 @@ public interface IImageRepository {
 
     void save(Image newImage);
 
-    void update(Image selectedImage);
-
     void delete(Image selectedImage);
 }

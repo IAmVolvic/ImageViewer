@@ -1,46 +1,62 @@
 package DAL;
 
+import java.io.File;
 import java.sql.*;
 
 public class DALService {
     private Connection connection;
 
-    public DALService () {
+    public DALService() {
         try {
-            // Connect to SQLite database
-            connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
-        }catch (SQLException e){ e.printStackTrace(); }
-
-        printImageName();
-    }
-
-
-    public void printImageName(){
-        try {
-            // Create a prepared statement to fetch the ImageName for ID 1
-            String sql = "SELECT imageName FROM images WHERE id = ?";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, 1); // Set the ID parameter to 1
-
-            // Execute the query
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-            // Check if a result exists
-            if (resultSet.next()) {
-                // Retrieve the ImageName from the result set
-                String imageName = resultSet.getString("imageName");
-                System.out.println("Image Name: " + imageName);
+            File dbFile = new File("ProjectDB.db");
+            if (!dbFile.exists()) {
+                createDatabase();
             } else {
-                System.out.println("No image found with ID 1");
+                connection = DriverManager.getConnection("jdbc:sqlite:ProjectDB.db");
             }
-
-            // Close the resources
-            resultSet.close();
-            preparedStatement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
+    public Connection thisConnection(){
+        return connection;
+    }
+
+
+    private void createDatabase() {
+        System.out.println("Creating the DB");
+        try {
+            // Connect to SQLite database
+            connection = DriverManager.getConnection("jdbc:sqlite:ProjectDB.db");
+
+            // SQL query to create the Images table
+            String sql = "CREATE TABLE IF NOT EXISTS Images (\n"
+                    + "    id INTEGER PRIMARY KEY,\n"
+                    + "    imagePath VARCHAR(50) NOT NULL,\n"
+                    + "    imageName VARCHAR(50) NOT NULL,\n"
+                    + "    imageDescription VARCHAR(50) NOT NULL,\n"
+                    + "    imageSize BIGINT NOT NULL,\n"
+                    + "    imageType VARCHAR(50) NOT NULL,\n"
+                    + "    imageDimensionsX BIGINT NOT NULL,\n"
+                    + "    imageDimensionsY BIGINT NOT NULL,\n"
+                    + "    imageColorR BIGINT NOT NULL,\n"
+                    + "    imageColorG BIGINT NOT NULL,\n"
+                    + "    imageColorB BIGINT NOT NULL,\n"
+                    + "    imageColorMix BIGINT NOT NULL\n"
+                    + ");";
+
+            // Create a statement
+            Statement statement = connection.createStatement();
+
+            // Execute the SQL statement
+            statement.execute(sql);
+
+            // Close the statement
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

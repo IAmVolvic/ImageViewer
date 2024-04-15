@@ -1,5 +1,6 @@
 package BLL.Models;
 
+import BLL.BLLService;
 import GUI.ImageUploadComponent.UploadedImage;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -29,18 +30,16 @@ public class ImageDetails {
     }
 
 
-    public long[] getImageRGB(File object){
-        MultiThread threadTask = new MultiThread();
-        return threadTask.getNumberOfPixels(object, Runtime.getRuntime().availableProcessors());
-    }
 
     public long[] getImageRGB(File object, UploadedImage uploadedImage){
-        MultiThread threadTask = new MultiThread();
-        return threadTask.getNumberOfPixels(object, 1, uploadedImage);
+        return BLLService.threadTask.getNumberOfPixels(object, 1, uploadedImage);
     }
 
     public long[] getImageXnYSize(File object){
-        MultiThread threadTask = new MultiThread();
-        return threadTask.getImageDimensions(object, Runtime.getRuntime().availableProcessors());
+        return BLLService.threadTask.getImageDimensions(object, Runtime.getRuntime().availableProcessors());
+    }
+
+    public void killThreads(){
+        BLLService.threadTask.cancelThreads();
     }
 }

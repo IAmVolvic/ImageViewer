@@ -15,7 +15,7 @@ import java.util.Objects;
 
 public class Image {
     // Bll Layer
-    private final ArrayList<BLL.Models.Image> ImageArray = ServiceFactory.imageService.getAllImages();
+    private ArrayList<BLL.Models.Image> ImageArray = new ArrayList<>();
 
     // Component State
     private final double cycleSpeed = 2;
@@ -32,16 +32,32 @@ public class Image {
     // UI Components
     private Details detailsComponent;
 
+    public Image() {
+    }
+
     public void initialize(Pane Img, ScrollPane smallImageScrollContainer, HBox SmallImgContainer, Details detailsComponent){
         this.largeImage = Img;
         this.smallImageScrollContainer = smallImageScrollContainer;
         this.smallImageContainer = SmallImgContainer;
         this.detailsComponent = detailsComponent;
 
+        ImageArray = ServiceFactory.imageService.getAllImages();
+
+        if (ImageArray.isEmpty()) { return; }
         createSmallImages();
         changeImage();
     }
 
+    public void updateList(){
+        ImageArray = ServiceFactory.imageService.getAllImages();
+        currentIndex = 0;
+
+        smallImageContainer.getChildren().clear();
+        smallImageArray.clear();
+
+        createSmallImages();
+        changeImage();
+    }
 
     private void createSmallImages() {
         for(BLL.Models.Image data: ImageArray){
@@ -109,12 +125,14 @@ public class Image {
 
 
     public void nextImage() {
+        if (ImageArray.isEmpty()) { return; }
         Next();
         changeImage();
     }
 
 
     public void previousImage() {
+        if (ImageArray.isEmpty()) { return; }
         Previous();
         changeImage();
     }
@@ -122,6 +140,7 @@ public class Image {
 
     // Cycle Image
     public void cycleImages(boolean togglePlay){
+        if (ImageArray.isEmpty()) { return; }
         if (togglePlay){
             timeline = new Timeline(
                     new KeyFrame(Duration.seconds(cycleSpeed), e -> nextImage())

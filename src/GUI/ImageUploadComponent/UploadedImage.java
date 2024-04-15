@@ -1,9 +1,13 @@
 package GUI.ImageUploadComponent;
 
+import BLL.Models.Image;
 import GUI.Classes.ServiceFactory;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
+
+import java.io.File;
 
 public class UploadedImage {
 
@@ -14,16 +18,40 @@ public class UploadedImage {
     @FXML
     private ProgressBar progressBar;
 
-    public String getTitle(){
-        return this.ImageTitle.getText();
+    private Parent view;
+
+    public void setView(Parent view) {
+        this.view = view;
     }
 
+    public Parent getView() {
+        return view;
+    }
+
+
     public void updateProgressBar(double newValue){
-        System.out.println(newValue);
         this.progressBar.setProgress(newValue);
     }
 
-    public void initiateUpload() {
-        ServiceFactory.imageService.uploadImage("resources/test/A.jpg", this);
+    public void initiateProcessImage(File image) {
+        this.ImageTitle.setPromptText(image.getName());
+        ServiceFactory.imageService.processImage(image.getPath(), this);
+    }
+
+    public boolean uploadImage(int thisIndex){
+        Image thisImage = ServiceFactory.imageService.getProcessedImageByIndex(thisIndex);
+        if(thisImage == null){return false;}
+
+        if (!ImageTitle.getText().trim().isEmpty()) {
+            thisImage.setImageName(ImageTitle.getText());
+        }
+
+        if (!ImageDescription.getText().trim().isEmpty()) {
+            thisImage.setImageDescription(ImageDescription.getText());
+        }
+
+        if (thisImage.getImageDimensionsX() == 0 || thisImage.getImageDimensionsY() == 0 || this.progressBar.getProgress() != 1.0) { return false; }
+
+        return ServiceFactory.imageService.uploadImage(thisIndex);
     }
 }

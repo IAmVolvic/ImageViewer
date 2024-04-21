@@ -1,14 +1,12 @@
 package GUI;
 
-import BLL.Services.ImageService;
-import DAL.DALService;
+
 import GUI.Classes.ServiceFactory;
 import GUI.DetailsComponent.Details;
 import GUI.ImageComponent.Image;
 import GUI.ImageUploadComponent.ImageUpload;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
